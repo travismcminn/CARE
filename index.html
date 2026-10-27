@@ -1,0 +1,1360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08294b">
+  <meta name="description" content="C.A.R.E. is a Missouri-based nonprofit helping individuals and families facing hardship through emergency assistance, essential supplies, and community support.">
+  <title>C.A.R.E. | Stronger People. Stronger Communities.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #08294b;
+      --navy-dark: #051d35;
+      --green: #398f3f;
+      --green-light: #eaf6e9;
+      --cream: #f8faf7;
+      --text: #27394a;
+      --muted: #657585;
+      --border: #e3eae8;
+      --white: #ffffff;
+      --shadow: 0 16px 45px rgba(8,41,75,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.18;
+      color: var(--navy);
+      margin: 0;
+      letter-spacing: -.035em;
+    }
+    p { margin: 0 0 18px; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    img { max-width: 100%; }
+    .container {
+      width: min(1160px, calc(100% - 44px));
+      margin: auto;
+    }
+    .section { padding: 100px 0; }
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 17px;
+    }
+    .section-title {
+      font-size: clamp(31px, 4.3vw, 49px);
+      margin-bottom: 20px;
+    }
+    .section-intro {
+      color: var(--muted);
+      max-width: 640px;
+      font-size: 17px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .2s ease;
+      text-align: center;
+      min-height: 50px;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-green { background: var(--green); color: white; }
+    .btn-green:hover { background: #2d7833; }
+    .btn-white { background: white; color: var(--navy); }
+    .btn-outline {
+      border-color: rgba(255,255,255,.55);
+      color: white;
+      background: transparent;
+    }
+    .btn-navy { background: var(--navy); color: white; }
+    .btn-light {
+      color: var(--navy);
+      background: var(--green-light);
+    }
+
+    /* Navigation */
+    .announcement {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .035em;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .brand img {
+      width: 75px;
+      height: 64px;
+      object-fit: contain;
+    }
+    .brand-text strong {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 21px;
+      color: var(--navy);
+      letter-spacing: .04em;
+      line-height: 1.1;
+    }
+    .brand-text small {
+      display: block;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .065em;
+      color: var(--green);
+      max-width: 150px;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+    .nav-links > a:not(.btn) {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .nav-links > a:hover { color: var(--green); }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--navy);
+      font-size: 29px;
+      padding: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(92,160,96,.23), transparent 35%),
+        linear-gradient(125deg, #061d35, #0a3659 65%, #145046);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -170px;
+      bottom: -320px;
+      width: 680px;
+      height: 680px;
+      border: 110px solid rgba(255,255,255,.035);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-grid {
+      min-height: 620px;
+      padding: 85px 0;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 65px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .eyebrow { color: #a5e5a7; }
+    .hero h1 {
+      color: white;
+      font-size: clamp(43px, 5.5vw, 76px);
+      max-width: 700px;
+      margin-bottom: 26px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #91d596;
+    }
+    .hero p {
+      color: #d8e6ee;
+      font-size: 18px;
+      max-width: 560px;
+      line-height: 1.8;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+    .hero-panel {
+      background: rgba(255,255,255,.095);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.15);
+      backdrop-filter: blur(8px);
+    }
+    .hero-panel .heart {
+      font-size: 52px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .hero-panel h3 {
+      color: white;
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+    .hero-panel p { font-size: 15px; }
+    .panel-divider {
+      height: 1px;
+      background: rgba(255,255,255,.2);
+      margin: 24px 0;
+    }
+    .panel-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .panel-stats strong {
+      display: block;
+      color: white;
+      font-size: 28px;
+      font-family: 'Manrope', sans-serif;
+    }
+    .panel-stats span {
+      color: #c9e3dc;
+      font-size: 12px;
+    }
+
+    /* Values */
+    .values-strip {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+    .value {
+      padding: 30px 20px;
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .value:not(:last-child) {
+      border-right: 1px solid var(--border);
+    }
+    .value-icon { font-size: 25px; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 85px;
+    }
+    .about-visual {
+      background: linear-gradient(145deg,#e5f3e6,#f4f8f6);
+      border-radius: 28px;
+      padding: 55px 35px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .about-visual img {
+      width: min(340px,100%);
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .about-visual .caption {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+    .about-copy p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+    }
+    .checklist li {
+      margin: 13px 0;
+      display: flex;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .checklist li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    /* Programs */
+    .programs { background: var(--cream); }
+    .center { text-align: center; }
+    .center .section-intro { margin: 0 auto; }
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+      margin-top: 48px;
+    }
+    .program-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px 29px;
+      box-shadow: 0 5px 20px rgba(8,41,75,.025);
+      transition: .2s ease;
+    }
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+    .program-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-light);
+      width: 62px;
+      height: 62px;
+      border-radius: 17px;
+      font-size: 29px;
+      margin-bottom: 24px;
+    }
+    .program-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .program-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .program-note {
+      margin: 34px auto 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      max-width: 700px;
+    }
+
+    /* Giving */
+    .giving-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+    .goal-card {
+      background: var(--navy);
+      border-radius: 25px;
+      padding: 40px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+    .goal-card h3 {
+      color: white;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+    .goal-amount {
+      color: white;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(55px,7vw,85px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.06em;
+      margin: 25px 0 10px;
+    }
+    .goal-card p { color: #d7e7ec; }
+    .goal-line {
+      height: 9px;
+      background: rgba(255,255,255,.16);
+      border-radius: 100px;
+      overflow: hidden;
+      margin: 25px 0 12px;
+    }
+    .goal-line span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: #80cf85;
+      border-radius: 100px;
+    }
+    .goal-caption {
+      font-size: 12px;
+      color: #c8dbe3;
+    }
+    .giving-copy p { color: var(--muted); }
+    .giving-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    /* How it works */
+    .steps { background: var(--cream); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 35px;
+      margin-top: 48px;
+    }
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .step p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Help */
+    .help-banner {
+      background: linear-gradient(115deg,#0b3656,#11604c);
+      border-radius: 26px;
+      padding: 55px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .help-banner h2 {
+      color: white;
+      font-size: clamp(28px,4vw,40px);
+      margin-bottom: 13px;
+    }
+    .help-banner p {
+      color: #dcece8;
+      max-width: 640px;
+      margin: 0;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--cream);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .contact-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 20px;
+    }
+    .contact-item {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-item:last-child { border: 0; }
+    .contact-item strong {
+      display: block;
+      font-size: 12px;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 6px;
+    }
+    .contact-item a {
+      color: var(--navy);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+    .contact-item a:hover { color: var(--green); }
+
+    /* Footer */
+    footer {
+      background: var(--navy-dark);
+      color: #c6d5df;
+      padding: 65px 0 25px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand {
+      color: white;
+      font-size: 25px;
+      font-weight: 800;
+      font-family: 'Manrope', sans-serif;
+    }
+    .footer-grid p {
+      color: #aebfca;
+      font-size: 13px;
+      margin-top: 15px;
+      max-width: 350px;
+    }
+    .footer-grid h4 {
+      color: white;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 23px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 12px;
+      color: #91a5b3;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 86px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 24px 25px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > a:not(.btn) {
+        padding: 14px 0;
+      }
+      .menu-btn { display: block; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 75px 0;
+      }
+      .hero-panel { max-width: 550px; }
+      .about-grid, .giving-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+      .program-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { gap: 25px; }
+    }
+    @media (max-width: 620px) {
+      .section { padding: 70px 0; }
+      .container { width: min(100% - 34px,1160px); }
+      .announcement { font-size: 10px; }
+      .nav { min-height: 75px; }
+      .nav-links { top: 75px; }
+      .brand img { width: 58px; height: 53px; }
+      .brand-text strong { font-size: 18px; }
+      .brand-text small { font-size: 8px; }
+      .hero-grid { padding: 65px 0; }
+      .hero h1 { font-size: clamp(40px,11vw,57px); }
+      .hero p { font-size: 16px; }
+      .hero-panel { padding: 27px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .value {
+        justify-content: flex-start;
+        padding: 18px 15px;
+      }
+      .value:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .about-visual {
+        min-height: 290px;
+        padding: 35px 25px;
+      }
+      .program-grid, .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .goal-card { padding: 29px; }
+      .help-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 25px;
+      }
+      .contact-card { padding: 25px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+      .hero-actions .btn { flex: 1 1 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .program-card { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    COMMUNITY ASSISTANCE & RELIEF EFFORT
+    &nbsp; | &nbsp;
+    STRONGER PEOPLE. STRONGER COMMUNITIES.
+  </div>
+
+  <header>
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="C.A.R.E. Home">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0663/2954/2719/files/IMG-4498.png?v=1793140890"
+          alt="C.A.R.E. nonprofit logo"
+        >
+        <div class="brand-text">
+          <strong>C.A.R.E.</strong>
+          <small>COMMUNITY ASSISTANCE & RELIEF EFFORT</small>
+        </div>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">Our Mission</a>
+        <a href="#programs">What We Do</a>
+        <a href="#impact">Our Goal</a>
+        <a href="#help">Get Help</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="btn btn-green">♥ Donate Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            💚 Neighbors helping neighbors
+          </span>
+
+          <h1>
+            A little help.<br>
+            <em>A lasting impact.</em>
+          </h1>
+
+          <p>
+            Everyone deserves someone in their corner.
+            C.A.R.E. brings people together to help
+            individuals and families facing financial
+            hardship, unexpected challenges, and
+            difficult times.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#donate" class="btn btn-green">
+              ♥ Make a Difference
+            </a>
+            <a href="#about" class="btn btn-outline">
+              Discover Our Mission →
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="heart">💚</div>
+
+          <h3>
+            Real people.<br>
+            Real needs. Real impact.
+          </h3>
+
+          <p>
+            Whether it's helping put food on the table,
+            keeping essential utilities running, or
+            bringing hope to a family during the holidays,
+            small acts of kindness can change lives.
+          </p>
+
+          <div class="panel-divider"></div>
+
+          <div class="panel-stats">
+            <div>
+              <strong>$10K</strong>
+              <span>Annual fundraising goal</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Community-focused mission</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <div class="values-strip">
+      <div class="container values-grid">
+        <div class="value">
+          <span class="value-icon">🤝</span>
+          Compassion in Action
+        </div>
+        <div class="value">
+          <span class="value-icon">💚</span>
+          Community First
+        </div>
+        <div class="value">
+          <span class="value-icon">🏡</span>
+          Helping Families Thrive
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0663/2954/2719/files/IMG-4498.png?v=1793140890"
+            alt="Community Assistance and Relief Effort logo"
+            loading="lazy"
+          >
+          <div class="caption">
+            Stronger People. Stronger Communities.
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">Who We Are</span>
+
+          <h2 class="section-title">
+            Because everyone needs
+            a helping hand sometimes.
+          </h2>
+
+          <p>
+            Community Assistance & Relief Effort,
+            better known as C.A.R.E., is a Missouri-based
+            nonprofit organization created with one
+            simple belief: when neighbors come together,
+            we can make difficult times a little easier.
+          </p>
+
+          <p>
+            Life can change in an instant. An unexpected
+            expense, a job loss, a medical emergency,
+            or a difficult holiday season can leave
+            individuals and families struggling to
+            make ends meet.
+          </p>
+
+          <p>
+            Our mission is to turn generosity into
+            meaningful assistance by connecting
+            community support with people who
+            need it most.
+          </p>
+
+          <ul class="checklist">
+            <li>Compassion without judgment</li>
+            <li>Practical assistance for real needs</li>
+            <li>Responsible stewardship of donations</li>
+            <li>Stronger, more connected communities</li>
+          </ul>
+
+          <a href="#programs" class="btn btn-light">
+            Explore Our Mission →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="center">
+          <span class="eyebrow">How We Hope to Help</span>
+
+          <h2 class="section-title">
+            Support where it matters most.
+          </h2>
+
+          <p class="section-intro">
+            C.A.R.E. focuses on practical, compassionate
+            assistance that can help families overcome
+            immediate challenges and find stability.
+          </p>
+        </div>
+
+        <div class="program-grid">
+
+          <article class="program-card">
+            <div class="program-icon">🛒</div>
+            <h3>Food & Groceries</h3>
+            <p>
+              Helping individuals and families access
+              groceries and essential food items when
+              their budgets fall short.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">🏠</div>
+            <h3>Housing & Utilities</h3>
+            <p>
+              Assistance with qualifying urgent housing
+              and utility needs to help families maintain
+              a safe, stable home.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">🎁</div>
+            <h3>Holiday Assistance</h3>
+            <p>
+              Helping bring comfort, essentials, and
+              a little extra joy to families during
+              the holiday season.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">💚</div>
+            <h3>Emergency Relief</h3>
+            <p>
+              Responding to unexpected financial
+              hardships and urgent needs when
+              resources are available.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">🧺</div>
+            <h3>Everyday Essentials</h3>
+            <p>
+              Supporting access to necessary household
+              items, personal care supplies, and other
+              basic necessities.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">🤝</div>
+            <h3>Community Partnerships</h3>
+            <p>
+              Bringing donors, volunteers, businesses,
+              and neighbors together to create a
+              stronger local support network.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="program-note">
+          Assistance is subject to available funding,
+          eligibility criteria, and review. Listing a
+          program does not guarantee financial assistance.
+        </p>
+      </div>
+    </section>
+
+    <!-- FUNDRAISING -->
+    <section class="section" id="impact">
+      <div class="container giving-grid">
+
+        <div class="goal-card">
+          <span class="eyebrow" style="color:#9fdda3">
+            Our Annual Mission
+          </span>
+
+          <h3>
+            One community. One shared goal.
+          </h3>
+
+          <div class="goal-amount">$10,000</div>
+
+          <p>
+            Our annual fundraising target to help
+            individuals and families facing hardship.
+          </p>
+
+          <div class="goal-line">
+            <span></span>
+          </div>
+
+          <div class="goal-caption">
+            Annual fundraising target.
+            Donation progress will be published
+            when verified totals are available.
+          </div>
+        </div>
+
+        <div class="giving-copy">
+          <span class="eyebrow">The Power of Giving</span>
+
+          <h2 class="section-title">
+            Your generosity can
+            change someone's day.
+          </h2>
+
+          <p>
+            A grocery bill. A utility payment.
+            Essential supplies for a family.
+            Sometimes the difference between
+            overwhelming stress and renewed hope
+            is a little help at just the right time.
+          </p>
+
+          <p>
+            Our goal is to raise $10,000 annually
+            to support individuals and families
+            in need through thoughtful,
+            needs-based charitable assistance.
+          </p>
+
+          <p>
+            Every contribution helps us work
+            toward that goal, and every supporter
+            becomes part of something bigger.
+          </p>
+
+          <div class="giving-actions">
+            <a href="#donate" class="btn btn-green">
+              ♥ Support Our Mission
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section class="section steps" id="donate">
+      <div class="container center">
+        <span class="eyebrow">Give Hope</span>
+
+        <h2 class="section-title">
+          Be the reason someone smiles today.
+        </h2>
+
+        <p class="section-intro">
+          Whether you make a one-time gift or choose
+          to support C.A.R.E. regularly, your kindness
+          helps build a stronger community.
+        </p>
+
+        <div class="steps-grid">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Choose to Give</h3>
+            <p>
+              Make a contribution in an amount
+              that's meaningful to you.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>We Put Care Into Action</h3>
+            <p>
+              Donations support our charitable
+              mission and qualifying community
+              assistance efforts.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Communities Grow Stronger</h3>
+            <p>
+              Together, we help create moments
+              of relief, dignity, and hope.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="giving-actions"
+             style="justify-content:center;margin-top:35px">
+          <button
+            type="button"
+            class="btn btn-green"
+            id="oneTimeDonate"
+          >
+            ♥ Make a Donation
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-navy"
+            id="monthlyDonate"
+          >
+            Become a Monthly Supporter
+          </button>
+        </div>
+
+        <p style="margin-top:22px;font-size:13px;color:var(--muted)">
+          Donations are processed through Stripe
+          when a live donation link is configured.
+          Please confirm C.A.R.E.'s federal
+          tax-exempt recognition before claiming
+          that donations are tax-deductible.
+        </p>
+      </div>
+    </section>
+
+    <!-- GET HELP -->
+    <section class="section" id="help">
+      <div class="container">
+
+        <div class="help-banner">
+          <div>
+            <span class="eyebrow" style="color:#a5e5a7">
+              We're Here for Our Community
+            </span>
+
+            <h2>
+              Going through a difficult time?
+            </h2>
+
+            <p>
+              Asking for help takes courage.
+              If you or someone you know is
+              facing financial hardship, contact
+              C.A.R.E. to ask about our assistance
+              process and available resources.
+            </p>
+          </div>
+
+          <a
+            href="mailto:travismcminn1991@gmail.com?subject=CARE%20Assistance%20Inquiry"
+            class="btn btn-white"
+          >
+            Ask About Assistance →
+          </a>
+        </div>
+
+        <p class="program-note">
+          C.A.R.E. is not an emergency response service.
+          Assistance requests are reviewed based on
+          available resources and established criteria.
+          For an immediate emergency, contact
+          the appropriate emergency service.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+
+        <div>
+          <span class="eyebrow">Connect With Us</span>
+
+          <h2 class="section-title">
+            Let's make a difference together.
+          </h2>
+
+          <p class="section-intro">
+            Have a question about donating,
+            volunteering, partnering with C.A.R.E.,
+            or requesting assistance?
+            We'd love to hear from you.
+          </p>
+
+          <p style="margin-top:25px;color:var(--muted)">
+            Based in Fredericktown, Missouri,
+            C.A.R.E. believes meaningful change
+            starts with neighbors looking out
+            for one another.
+          </p>
+
+          <a
+            href="mailto:travismcminn1991@gmail.com?subject=CARE%20General%20Inquiry"
+            class="btn btn-green"
+            style="margin-top:12px"
+          >
+            Send Us a Message
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-item">
+            <strong>Organization</strong>
+            <span>
+              Community Assistance & Relief Effort
+              (C.A.R.E.)
+            </span>
+          </div>
+
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:travismcminn1991@gmail.com">
+              travismcminn1991@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:+15735769305">
+              (573) 576-9305
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Location</strong>
+            Fredericktown, Missouri
+          </div>
+
+          <div class="contact-item">
+            <strong>Website</strong>
+            <a href="https://carehelps.org">
+              carehelps.org
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand">C.A.R.E. 💚</div>
+          <p>
+            Community Assistance & Relief Effort
+            is dedicated to helping individuals
+            and families through compassion,
+            practical assistance, and community support.
+          </p>
+          <p>
+            Stronger People. Stronger Communities.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="#about">Our Mission</a>
+            <a href="#programs">What We Do</a>
+            <a href="#impact">Our Annual Goal</a>
+            <a href="#help">Get Help</a>
+            <a href="#donate">Donate</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <div class="footer-links">
+            <a href="mailto:travismcminn1991@gmail.com">
+              Email C.A.R.E.
+            </a>
+            <a href="tel:+15735769305">
+              (573) 576-9305
+            </a>
+            <span>Fredericktown, Missouri</span>
+            <span>carehelps.org</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="year"></span>
+          Community Assistance & Relief Effort.
+          All rights reserved.
+        </span>
+
+        <span>
+          Made with care for our community. 💚
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    /*
+      WEBSITE SETTINGS
+
+      Replace the empty strings below with
+      your LIVE Stripe Payment Link URLs.
+
+      Example:
+      oneTimeStripeLink:
+        'https://buy.stripe.com/your-real-link'
+
+      Do not use Stripe secret API keys here.
+      Only use public hosted Payment Link URLs.
+    */
+
+    const SITE_CONFIG = {
+      oneTimeStripeLink: '',
+      monthlyStripeLink: '',
+      contactEmail: 'travismcminn1991@gmail.com'
+    };
+
+    // Current year
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    // Mobile navigation
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute(
+        'aria-label',
+        isOpen ? 'Close navigation' : 'Open navigation'
+      );
+      menuBtn.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open navigation');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    // Donation actions
+    function openDonation(link, donationType) {
+      if (
+        link &&
+        /^https:\/\/buy\.stripe\.com\//.test(link)
+      ) {
+        window.open(
+          link,
+          '_blank',
+          'noopener,noreferrer'
+        );
+        return;
+      }
+
+      const subject = encodeURIComponent(
+        donationType + ' Donation Inquiry - CARE'
+      );
+
+      const body = encodeURIComponent(
+        'Hello C.A.R.E.,\n\n' +
+        'I would like information about making a ' +
+        donationType.toLowerCase() +
+        ' donation to support your mission.\n\n' +
+        'Thank you!'
+      );
+
+      window.location.href =
+        'mailto:' + SITE_CONFIG.contactEmail +
+        '?subject=' + subject +
+        '&body=' + body;
+    }
+
+    document.getElementById('oneTimeDonate')
+      .addEventListener('click', () => {
+        openDonation(
+          SITE_CONFIG.oneTimeStripeLink,
+          'One-Time'
+        );
+      });
+
+    document.getElementById('monthlyDonate')
+      .addEventListener('click', () => {
+        openDonation(
+          SITE_CONFIG.monthlyStripeLink,
+          'Monthly'
+        );
+      });
+  </script>
+
+</body>
+</html>
