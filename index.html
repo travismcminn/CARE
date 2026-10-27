@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08294b">
-  <meta name="description" content="C.A.R.E. is a Missouri-based nonprofit helping individuals and families facing hardship through emergency assistance, essential supplies, and community support.">
-  <title>C.A.R.E. | Stronger People. Stronger Communities.</title>
+  <meta name="theme-color" content="#082b4d">
+  <meta name="description" content="C.A.R.E. provides confidential, referral-based financial relief to individuals and families facing hardship. Stronger People. Stronger Communities.">
+  <title>C.A.R.E. | Community Assistance & Relief Effort</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #08294b;
-      --navy-dark: #051d35;
-      --green: #398f3f;
-      --green-light: #eaf6e9;
-      --cream: #f8faf7;
-      --text: #27394a;
-      --muted: #657585;
-      --border: #e3eae8;
-      --white: #ffffff;
-      --shadow: 0 16px 45px rgba(8,41,75,.08);
+      --navy: #082b4d;
+      --dark: #051d35;
+      --green: #398f43;
+      --light-green: #eaf5eb;
+      --cream: #f7f9f7;
+      --text: #26394a;
+      --muted: #667685;
+      --border: #e2e9e5;
+      --white: #fff;
     }
 
     * { box-sizing: border-box; }
@@ -31,484 +31,417 @@
       margin: 0;
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      background: var(--white);
-      line-height: 1.65;
+      line-height: 1.7;
+      background: white;
     }
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       font-family: 'Manrope', sans-serif;
-      line-height: 1.18;
       color: var(--navy);
-      margin: 0;
+      line-height: 1.2;
       letter-spacing: -.035em;
+      margin: 0;
     }
     p { margin: 0 0 18px; }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; }
     img { max-width: 100%; }
     .container {
-      width: min(1160px, calc(100% - 44px));
+      width: min(1160px, calc(100% - 40px));
       margin: auto;
     }
-    .section { padding: 100px 0; }
+    .section { padding: 95px 0; }
     .eyebrow {
       color: var(--green);
-      font-weight: 800;
-      letter-spacing: .13em;
       text-transform: uppercase;
       font-size: 12px;
-      display: inline-block;
-      margin-bottom: 17px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      display: block;
+      margin-bottom: 16px;
     }
     .section-title {
-      font-size: clamp(31px, 4.3vw, 49px);
-      margin-bottom: 20px;
+      font-size: clamp(32px, 4vw, 49px);
+      margin-bottom: 22px;
     }
-    .section-intro {
+    .intro {
       color: var(--muted);
-      max-width: 640px;
       font-size: 17px;
+      max-width: 650px;
     }
+    .center { text-align: center; }
+    .center .intro { margin: 0 auto; }
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      border: 1px solid transparent;
-      padding: 15px 25px;
+      min-height: 51px;
+      padding: 14px 25px;
       border-radius: 10px;
-      font-weight: 800;
+      border: 1px solid transparent;
       font-size: 14px;
+      font-weight: 800;
       transition: .2s ease;
       text-align: center;
-      min-height: 50px;
     }
     .btn:hover { transform: translateY(-2px); }
-    .btn-green { background: var(--green); color: white; }
-    .btn-green:hover { background: #2d7833; }
-    .btn-white { background: white; color: var(--navy); }
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+    .btn-green:hover { background: #287734; }
+    .btn-white {
+      background: white;
+      color: var(--navy);
+    }
     .btn-outline {
       border-color: rgba(255,255,255,.55);
       color: white;
-      background: transparent;
     }
-    .btn-navy { background: var(--navy); color: white; }
-    .btn-light {
-      color: var(--navy);
-      background: var(--green-light);
+    .btn-navy {
+      background: var(--navy);
+      color: white;
     }
 
-    /* Navigation */
-    .announcement {
+    /* Header */
+    .topbar {
       background: var(--navy);
       color: white;
       text-align: center;
       padding: 9px 15px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .035em;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .07em;
     }
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,.97);
+      background: rgba(255,255,255,.98);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(14px);
     }
     .nav {
-      min-height: 86px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
     }
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      flex-shrink: 0;
     }
     .brand img {
       width: 75px;
-      height: 64px;
+      height: 60px;
       object-fit: contain;
     }
-    .brand-text strong {
+    .brand strong {
       display: block;
       font-family: 'Manrope', sans-serif;
-      font-size: 21px;
+      font-size: 22px;
       color: var(--navy);
-      letter-spacing: .04em;
-      line-height: 1.1;
+      line-height: 1.2;
     }
-    .brand-text small {
+    .brand small {
       display: block;
       font-size: 9px;
       font-weight: 800;
-      letter-spacing: .065em;
       color: var(--green);
-      max-width: 150px;
-      line-height: 1.35;
-      margin-top: 4px;
+      max-width: 165px;
+      line-height: 1.4;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 27px;
+      gap: 23px;
     }
-    .nav-links > a:not(.btn) {
+    .nav-links a:not(.btn) {
       color: var(--navy);
       font-size: 13px;
       font-weight: 800;
     }
-    .nav-links > a:hover { color: var(--green); }
+    .nav-links a:hover { color: var(--green); }
     .menu-btn {
       display: none;
       background: none;
-      border: 0;
+      border: none;
       color: var(--navy);
-      font-size: 29px;
-      padding: 8px;
+      font-size: 28px;
     }
 
     /* Hero */
     .hero {
       background:
-        radial-gradient(circle at 85% 15%, rgba(92,160,96,.23), transparent 35%),
-        linear-gradient(125deg, #061d35, #0a3659 65%, #145046);
+        radial-gradient(circle at 85% 20%, rgba(74,154,91,.28), transparent 40%),
+        linear-gradient(125deg,#061d35,#0a3557 65%,#115443);
       color: white;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -170px;
-      bottom: -320px;
-      width: 680px;
-      height: 680px;
-      border: 110px solid rgba(255,255,255,.035);
-      border-radius: 50%;
-      pointer-events: none;
     }
     .hero-grid {
-      min-height: 620px;
-      padding: 85px 0;
+      min-height: 600px;
+      padding: 80px 0;
       display: grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 65px;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
-    .hero .eyebrow { color: #a5e5a7; }
+    .hero .eyebrow { color: #a3dfa9; }
     .hero h1 {
       color: white;
-      font-size: clamp(43px, 5.5vw, 76px);
-      max-width: 700px;
-      margin-bottom: 26px;
+      font-size: clamp(42px,5.4vw,72px);
+      margin-bottom: 25px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: #91d596;
-    }
+    .hero h1 span { color: #91d596; }
     .hero p {
-      color: #d8e6ee;
+      color: #dce9ef;
       font-size: 18px;
-      max-width: 560px;
-      line-height: 1.8;
+      max-width: 590px;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 13px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
-    .hero-panel {
-      background: rgba(255,255,255,.095);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 26px;
-      padding: 36px;
-      box-shadow: 0 25px 70px rgba(0,0,0,.15);
+    .hero-card {
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 25px;
+      padding: 35px;
       backdrop-filter: blur(8px);
     }
-    .hero-panel .heart {
-      font-size: 52px;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .hero-panel h3 {
+    .hero-card h3 {
       color: white;
-      font-size: 27px;
+      font-size: 25px;
+      margin-bottom: 17px;
+    }
+    .hero-card p { font-size: 15px; }
+    .hero-card .heart {
+      font-size: 48px;
       margin-bottom: 15px;
     }
-    .hero-panel p { font-size: 15px; }
-    .panel-divider {
-      height: 1px;
-      background: rgba(255,255,255,.2);
-      margin: 24px 0;
+    .hero-stat {
+      border-top: 1px solid rgba(255,255,255,.2);
+      margin-top: 25px;
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
-    .panel-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-    .panel-stats strong {
+    .hero-stat strong {
       display: block;
       color: white;
       font-size: 28px;
-      font-family: 'Manrope', sans-serif;
     }
-    .panel-stats span {
-      color: #c9e3dc;
+    .hero-stat small {
+      color: #c8dfd8;
       font-size: 12px;
     }
 
-    /* Values */
-    .values-strip {
-      border-bottom: 1px solid var(--border);
-      background: #fff;
-    }
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-    }
-    .value {
-      padding: 30px 20px;
-      display: flex;
-      gap: 13px;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-    .value:not(:last-child) {
-      border-right: 1px solid var(--border);
-    }
-    .value-icon { font-size: 25px; }
-
-    /* About */
-    .about-grid {
+    /* Mission */
+    .mission-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 75px;
       align-items: center;
-      gap: 85px;
     }
-    .about-visual {
-      background: linear-gradient(145deg,#e5f3e6,#f4f8f6);
-      border-radius: 28px;
-      padding: 55px 35px;
+    .mission-art {
+      background: linear-gradient(145deg,#e8f4e8,#f5f9f6);
+      border-radius: 26px;
       min-height: 400px;
+      padding: 45px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
     }
-    .about-visual img {
-      width: min(340px,100%);
-      object-fit: contain;
+    .mission-art img {
+      max-width: 350px;
       mix-blend-mode: multiply;
     }
-    .about-visual .caption {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin-top: 18px;
-    }
-    .about-copy p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-    .checklist {
+    .mission-copy p { color: var(--muted); }
+    .mission-points {
       list-style: none;
       padding: 0;
-      margin: 25px 0;
+      margin: 25px 0 0;
     }
-    .checklist li {
-      margin: 13px 0;
-      display: flex;
-      gap: 12px;
+    .mission-points li {
+      padding: 10px 0;
       font-weight: 700;
       color: var(--navy);
     }
-    .checklist li::before {
+    .mission-points li::before {
       content: "✓";
       color: var(--green);
-      font-weight: 900;
+      margin-right: 12px;
     }
 
-    /* Programs */
-    .programs { background: var(--cream); }
-    .center { text-align: center; }
-    .center .section-intro { margin: 0 auto; }
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 22px;
-      margin-top: 48px;
-    }
-    .program-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 34px 29px;
-      box-shadow: 0 5px 20px rgba(8,41,75,.025);
-      transition: .2s ease;
-    }
-    .program-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-    .program-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--green-light);
-      width: 62px;
-      height: 62px;
-      border-radius: 17px;
-      font-size: 29px;
-      margin-bottom: 24px;
-    }
-    .program-card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-    .program-card p {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 0;
-    }
-    .program-note {
-      margin: 34px auto 0;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-      max-width: 700px;
-    }
-
-    /* Giving */
-    .giving-grid {
+    /* Campaign */
+    .campaign { background: var(--cream); }
+    .campaign-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 65px;
       align-items: center;
     }
-    .goal-card {
+    .campaign-card {
       background: var(--navy);
-      border-radius: 25px;
+      color: white;
       padding: 40px;
-      color: white;
-      box-shadow: var(--shadow);
+      border-radius: 25px;
     }
-    .goal-card h3 {
+    .campaign-card h3 {
       color: white;
-      font-size: 23px;
-      margin-bottom: 10px;
+      font-size: 24px;
     }
-    .goal-amount {
-      color: white;
+    .goal {
       font-family: 'Manrope', sans-serif;
-      font-size: clamp(55px,7vw,85px);
+      font-size: clamp(55px,7vw,82px);
       font-weight: 800;
-      line-height: 1.2;
+      color: white;
       letter-spacing: -.06em;
-      margin: 25px 0 10px;
+      margin: 22px 0 5px;
+      line-height: 1.2;
     }
-    .goal-card p { color: #d7e7ec; }
-    .goal-line {
-      height: 9px;
-      background: rgba(255,255,255,.16);
-      border-radius: 100px;
+    .campaign-card p { color: #d7e5ed; }
+    .progress {
+      height: 11px;
+      background: rgba(255,255,255,.18);
+      border-radius: 30px;
       overflow: hidden;
       margin: 25px 0 12px;
     }
-    .goal-line span {
+    .progress span {
       display: block;
+      width: 20%;
       height: 100%;
-      width: 0;
-      background: #80cf85;
-      border-radius: 100px;
+      background: #82d18b;
     }
-    .goal-caption {
-      font-size: 12px;
-      color: #c8dbe3;
-    }
-    .giving-copy p { color: var(--muted); }
-    .giving-actions {
+    .progress-labels {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      color: #d7e5ed;
     }
+    .campaign-copy p { color: var(--muted); }
 
-    /* How it works */
-    .steps { background: var(--cream); }
-    .steps-grid {
+    /* Principles */
+    .principles { background: white; }
+    .card-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      gap: 35px;
-      margin-top: 48px;
+      gap: 22px;
+      margin-top: 45px;
     }
-    .step-number {
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 7px 25px rgba(8,43,77,.035);
+    }
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--light-green);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--green);
-      color: white;
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 27px;
       margin-bottom: 22px;
     }
-    .step h3 {
+    .card h3 {
       font-size: 20px;
-      margin-bottom: 12px;
-    }
-    .step p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* Help */
-    .help-banner {
-      background: linear-gradient(115deg,#0b3656,#11604c);
-      border-radius: 26px;
-      padding: 55px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-    .help-banner h2 {
-      color: white;
-      font-size: clamp(28px,4vw,40px);
       margin-bottom: 13px;
     }
-    .help-banner p {
-      color: #dcece8;
-      max-width: 640px;
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
       margin: 0;
     }
 
-    /* Contact */
-    .contact {
-      background: var(--cream);
+    /* Process */
+    .process { background: var(--cream); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 40px;
+      margin-top: 50px;
     }
+    .step-number {
+      background: var(--green);
+      color: white;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+    .step h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Donation */
+    .donation {
+      background: linear-gradient(120deg,#082b4d,#0e5848);
+      color: white;
+    }
+    .donation h2 { color: white; }
+    .donation .intro { color: #d8e8e7; }
+    .donation .eyebrow { color: #a6e6ae; }
+    .donation-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .donation-note {
+      font-size: 12px;
+      color: #c6d9db;
+      margin-top: 23px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Referral */
+    .referral-box {
+      background: linear-gradient(125deg,#e9f5eb,#f7faf7);
+      border: 1px solid #d6e8d8;
+      border-radius: 26px;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+    .referral-box h2 {
+      font-size: clamp(29px,4vw,42px);
+      margin-bottom: 17px;
+    }
+    .referral-box p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* Contact */
+    .contact { background: var(--cream); }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: start;
+      gap: 65px;
     }
     .contact-card {
       background: white;
@@ -517,168 +450,134 @@
       border-radius: 20px;
     }
     .contact-item {
-      padding: 19px 0;
+      padding: 17px 0;
       border-bottom: 1px solid var(--border);
     }
-    .contact-item:last-child { border: 0; }
+    .contact-item:last-child { border-bottom: none; }
     .contact-item strong {
       display: block;
-      font-size: 12px;
       color: var(--green);
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: .1em;
       margin-bottom: 6px;
     }
     .contact-item a {
-      color: var(--navy);
       font-weight: 800;
+      color: var(--navy);
       overflow-wrap: anywhere;
     }
-    .contact-item a:hover { color: var(--green); }
 
     /* Footer */
     footer {
-      background: var(--navy-dark);
-      color: #c6d5df;
-      padding: 65px 0 25px;
+      background: var(--dark);
+      color: #b9cad5;
+      padding: 60px 0 25px;
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 45px;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
     }
-    .footer-brand {
-      color: white;
-      font-size: 25px;
-      font-weight: 800;
-      font-family: 'Manrope', sans-serif;
-    }
+    .footer-grid h3,
+    .footer-grid h4 { color: white; }
+    .footer-grid h3 { font-size: 27px; }
+    .footer-grid h4 { font-size: 15px; }
     .footer-grid p {
-      color: #aebfca;
       font-size: 13px;
       margin-top: 15px;
       max-width: 350px;
-    }
-    .footer-grid h4 {
-      color: white;
-      font-size: 14px;
-      margin-bottom: 18px;
     }
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 11px;
+      margin-top: 20px;
       font-size: 13px;
     }
     .footer-links a:hover { color: white; }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding-top: 23px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      padding-top: 22px;
       display: flex;
       justify-content: space-between;
       gap: 20px;
       font-size: 12px;
-      color: #91a5b3;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
+      .menu-btn { display: block; }
       .nav-links {
         display: none;
         position: absolute;
-        top: 86px;
+        top: 82px;
         left: 0;
         right: 0;
         background: white;
+        padding: 20px;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
-        padding: 15px 24px 25px;
         border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow);
       }
       .nav-links.open { display: flex; }
-      .nav-links > a:not(.btn) {
-        padding: 14px 0;
-      }
-      .menu-btn { display: block; }
-      .hero-grid {
+      .nav-links a:not(.btn) { padding: 11px 0; }
+      .hero-grid,
+      .mission-grid,
+      .campaign-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 75px 0;
+        gap: 40px;
       }
-      .hero-panel { max-width: 550px; }
-      .about-grid, .giving-grid, .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-      .program-grid { grid-template-columns: repeat(2,1fr); }
-      .footer-grid { gap: 25px; }
-    }
-    @media (max-width: 620px) {
-      .section { padding: 70px 0; }
-      .container { width: min(100% - 34px,1160px); }
-      .announcement { font-size: 10px; }
-      .nav { min-height: 75px; }
-      .nav-links { top: 75px; }
-      .brand img { width: 58px; height: 53px; }
-      .brand-text strong { font-size: 18px; }
-      .brand-text small { font-size: 8px; }
-      .hero-grid { padding: 65px 0; }
-      .hero h1 { font-size: clamp(40px,11vw,57px); }
-      .hero p { font-size: 16px; }
-      .hero-panel { padding: 27px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .value {
-        justify-content: flex-start;
-        padding: 18px 15px;
-      }
-      .value:not(:last-child) {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-      }
-      .about-visual {
-        min-height: 290px;
-        padding: 35px 25px;
-      }
-      .program-grid, .steps-grid {
-        grid-template-columns: 1fr;
-      }
-      .goal-card { padding: 29px; }
-      .help-banner {
+      .hero-grid { padding: 70px 0; }
+      .card-grid { grid-template-columns: repeat(2,1fr); }
+      .referral-box {
         flex-direction: column;
         align-items: flex-start;
-        padding: 32px 25px;
       }
-      .contact-card { padding: 25px; }
+    }
+    @media (max-width: 620px) {
+      .section { padding: 68px 0; }
+      .container { width: calc(100% - 34px); }
+      .nav { min-height: 74px; }
+      .nav-links { top: 74px; }
+      .brand img { width: 57px; height: 50px; }
+      .brand strong { font-size: 18px; }
+      .brand small { font-size: 8px; }
+      .hero h1 { font-size: 43px; }
+      .hero p { font-size: 16px; }
+      .hero-card { padding: 27px; }
+      .mission-art { min-height: 280px; padding: 25px; }
+      .campaign-card { padding: 28px; }
+      .card-grid, .steps { grid-template-columns: 1fr; }
+      .referral-box { padding: 30px 25px; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; }
-      .hero-actions .btn { flex: 1 1 100%; }
+      .hero-actions .btn { width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .program-card { transition: none; }
+      .btn { transition: none; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="announcement">
-    COMMUNITY ASSISTANCE & RELIEF EFFORT
-    &nbsp; | &nbsp;
+  <div class="topbar">
+    A REGISTERED 501(c)(3) NONPROFIT ORGANIZATION
+    &nbsp; • &nbsp;
     STRONGER PEOPLE. STRONGER COMMUNITIES.
   </div>
 
   <header>
     <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="C.A.R.E. Home">
+      <a class="brand" href="#home">
         <img
           src="https://cdn.shopify.com/s/files/1/0663/2954/2719/files/IMG-4498.png?v=1793140890"
-          alt="C.A.R.E. nonprofit logo"
+          alt="C.A.R.E. logo"
         >
-        <div class="brand-text">
+        <div>
           <strong>C.A.R.E.</strong>
           <small>COMMUNITY ASSISTANCE & RELIEF EFFORT</small>
         </div>
@@ -694,11 +593,11 @@
 
       <div class="nav-links" id="navLinks">
         <a href="#about">Our Mission</a>
-        <a href="#programs">What We Do</a>
-        <a href="#impact">Our Goal</a>
-        <a href="#help">Get Help</a>
+        <a href="#campaign">2026 Campaign</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#referrals">Referrals</a>
         <a href="#contact">Contact</a>
-        <a href="#donate" class="btn btn-green">♥ Donate Now</a>
+        <a href="#donate" class="btn btn-green">♥ Donate</a>
       </div>
     </nav>
   </header>
@@ -710,415 +609,434 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">
-            💚 Neighbors helping neighbors
+            2026 Holiday Relief Campaign
           </span>
 
           <h1>
             A little help.<br>
-            <em>A lasting impact.</em>
+            <span>A lasting impact.</span>
           </h1>
 
           <p>
-            Everyone deserves someone in their corner.
-            C.A.R.E. brings people together to help
-            individuals and families facing financial
-            hardship, unexpected challenges, and
-            difficult times.
+            The holidays should be a season of hope,
+            not hardship. C.A.R.E. brings our community
+            together to provide meaningful financial
+            relief to individuals and families who
+            need a helping hand.
           </p>
 
           <div class="hero-actions">
             <a href="#donate" class="btn btn-green">
-              ♥ Make a Difference
+              ♥ Make a Donation
             </a>
             <a href="#about" class="btn btn-outline">
-              Discover Our Mission →
+              Learn About C.A.R.E. →
             </a>
           </div>
         </div>
 
-        <div class="hero-panel">
+        <div class="hero-card">
           <div class="heart">💚</div>
 
           <h3>
-            Real people.<br>
-            Real needs. Real impact.
+            Giving with purpose.<br>
+            Helping with dignity.
           </h3>
 
           <p>
-            Whether it's helping put food on the table,
-            keeping essential utilities running, or
-            bringing hope to a family during the holidays,
-            small acts of kindness can change lives.
+            No public spotlight on families in need.
+            No expectation of recognition.
+            Just thoughtful, confidential financial
+            assistance made possible by people
+            who care.
           </p>
 
-          <div class="panel-divider"></div>
-
-          <div class="panel-stats">
+          <div class="hero-stat">
             <div>
-              <strong>$10K</strong>
-              <span>Annual fundraising goal</span>
+              <strong>$10,000</strong>
+              <small>2026 fundraising goal</small>
             </div>
             <div>
-              <strong>100%</strong>
-              <span>Community-focused mission</span>
+              <strong>$2,000</strong>
+              <small>Founder commitment</small>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- VALUES -->
-    <div class="values-strip">
-      <div class="container values-grid">
-        <div class="value">
-          <span class="value-icon">🤝</span>
-          Compassion in Action
-        </div>
-        <div class="value">
-          <span class="value-icon">💚</span>
-          Community First
-        </div>
-        <div class="value">
-          <span class="value-icon">🏡</span>
-          Helping Families Thrive
-        </div>
-      </div>
-    </div>
-
-    <!-- ABOUT -->
+    <!-- MISSION -->
     <section class="section" id="about">
-      <div class="container about-grid">
+      <div class="container mission-grid">
 
-        <div class="about-visual">
+        <div class="mission-art">
           <img
             src="https://cdn.shopify.com/s/files/1/0663/2954/2719/files/IMG-4498.png?v=1793140890"
-            alt="Community Assistance and Relief Effort logo"
+            alt="Community Assistance and Relief Effort"
             loading="lazy"
           >
-          <div class="caption">
-            Stronger People. Stronger Communities.
-          </div>
         </div>
 
-        <div class="about-copy">
-          <span class="eyebrow">Who We Are</span>
+        <div class="mission-copy">
+          <span class="eyebrow">Our Mission</span>
 
           <h2 class="section-title">
-            Because everyone needs
-            a helping hand sometimes.
+            Real financial relief.
+            Real community impact.
           </h2>
 
           <p>
-            Community Assistance & Relief Effort,
-            better known as C.A.R.E., is a Missouri-based
-            nonprofit organization created with one
-            simple belief: when neighbors come together,
-            we can make difficult times a little easier.
+            Community Assistance & Relief Effort
+            (C.A.R.E.) is a Missouri-based 501(c)(3)
+            nonprofit organization founded to help
+            individuals and families experiencing
+            financial hardship.
           </p>
 
           <p>
-            Life can change in an instant. An unexpected
-            expense, a job loss, a medical emergency,
-            or a difficult holiday season can leave
-            individuals and families struggling to
-            make ends meet.
+            Our mission is simple: bring together
+            generous people in our community and
+            turn their contributions into direct,
+            meaningful financial assistance for
+            those facing difficult circumstances.
           </p>
 
           <p>
-            Our mission is to turn generosity into
-            meaningful assistance by connecting
-            community support with people who
-            need it most.
+            We focus especially on the holiday season,
+            when financial pressure can make an
+            already challenging situation even harder.
           </p>
 
-          <ul class="checklist">
-            <li>Compassion without judgment</li>
-            <li>Practical assistance for real needs</li>
-            <li>Responsible stewardship of donations</li>
-            <li>Stronger, more connected communities</li>
+          <ul class="mission-points">
+            <li>Direct financial assistance</li>
+            <li>Confidential, referral-based selection</li>
+            <li>Thoughtful review and board oversight</li>
+            <li>Transparency without sacrificing privacy</li>
           </ul>
+        </div>
 
-          <a href="#programs" class="btn btn-light">
-            Explore Our Mission →
+      </div>
+    </section>
+
+    <!-- CAMPAIGN -->
+    <section class="section campaign" id="campaign">
+      <div class="container campaign-grid">
+
+        <div class="campaign-card">
+          <span class="eyebrow" style="color:#a5e5a7">
+            2026 Holiday Relief Fund
+          </span>
+
+          <h3>
+            Our community. Our shared goal.
+          </h3>
+
+          <div class="goal">$10,000</div>
+
+          <p>
+            Our fundraising goal for the
+            2026 holiday season.
+          </p>
+
+          <div class="progress">
+            <span></span>
+          </div>
+
+          <div class="progress-labels">
+            <span>$2,000 founder pledge</span>
+            <span>$8,000 remaining</span>
+          </div>
+
+          <p style="font-size:12px;margin-top:20px">
+            The progress shown reflects the founder's
+            stated $2,000 commitment, not necessarily
+            funds already received. Public fundraising
+            totals will be updated as donations are verified.
+          </p>
+        </div>
+
+        <div class="campaign-copy">
+          <span class="eyebrow">Our First Campaign</span>
+
+          <h2 class="section-title">
+            Let's raise $10,000
+            for our neighbors.
+          </h2>
+
+          <p>
+            This year, we're setting out to raise
+            at least $10,000 to provide direct
+            financial assistance to individuals
+            and families facing hardship in
+            our community.
+          </p>
+
+          <p>
+            Our founder has personally committed
+            $2,000 toward that goal, leaving
+            $8,000 for our community to help raise.
+          </p>
+
+          <p>
+            We're keeping fundraising simple:
+            voluntary contributions from individuals,
+            families, and businesses who believe
+            in helping their neighbors.
+          </p>
+
+          <p>
+            As C.A.R.E. grows, we hope to expand
+            our reach and increase our annual
+            fundraising goals.
+          </p>
+
+          <a href="#donate" class="btn btn-green">
+            Help Us Reach Our Goal
           </a>
         </div>
 
       </div>
     </section>
 
-    <!-- PROGRAMS -->
-    <section class="section programs" id="programs">
+    <!-- PRINCIPLES -->
+    <section class="section principles" id="approach">
       <div class="container">
+
         <div class="center">
-          <span class="eyebrow">How We Hope to Help</span>
+          <span class="eyebrow">Our Guiding Principles</span>
 
           <h2 class="section-title">
-            Support where it matters most.
+            Compassion with accountability.
           </h2>
 
-          <p class="section-intro">
-            C.A.R.E. focuses on practical, compassionate
-            assistance that can help families overcome
-            immediate challenges and find stability.
+          <p class="intro">
+            C.A.R.E. is built around a simple,
+            personal approach to helping others,
+            while protecting dignity and respecting
+            the generosity of every donor.
           </p>
         </div>
 
-        <div class="program-grid">
+        <div class="card-grid">
 
-          <article class="program-card">
-            <div class="program-icon">🛒</div>
-            <h3>Food & Groceries</h3>
+          <article class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Privacy & Dignity</h3>
             <p>
-              Helping individuals and families access
-              groceries and essential food items when
-              their budgets fall short.
+              We protect the identities of donors
+              and recipients in public communications.
+              Nobody should have to sacrifice
+              their dignity to receive help.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-icon">🏠</div>
-            <h3>Housing & Utilities</h3>
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Trusted Referrals</h3>
             <p>
-              Assistance with qualifying urgent housing
-              and utility needs to help families maintain
-              a safe, stable home.
+              Potential recipients are identified
+              through referrals from community
+              members, churches, and trusted
+              local organizations.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-icon">🎁</div>
-            <h3>Holiday Assistance</h3>
+          <article class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Board Oversight</h3>
             <p>
-              Helping bring comfort, essentials, and
-              a little extra joy to families during
-              the holiday season.
+              Referrals are reviewed using
+              established charitable criteria.
+              Assistance decisions are subject
+              to board oversight and available funds.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-icon">💚</div>
-            <h3>Emergency Relief</h3>
+          <article class="card">
+            <div class="card-icon">💵</div>
+            <h3>Financial Relief</h3>
             <p>
-              Responding to unexpected financial
-              hardships and urgent needs when
-              resources are available.
+              Our focus is on providing financial
+              assistance that addresses genuine
+              needs, rather than organizing
+              gift or merchandise drives.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-icon">🧺</div>
-            <h3>Everyday Essentials</h3>
+          <article class="card">
+            <div class="card-icon">💬</div>
+            <h3>Personal Connection</h3>
             <p>
-              Supporting access to necessary household
-              items, personal care supplies, and other
-              basic necessities.
+              We seek to understand each referred
+              family's circumstances and needs
+              before determining appropriate
+              assistance.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-icon">🤝</div>
-            <h3>Community Partnerships</h3>
+          <article class="card">
+            <div class="card-icon">📋</div>
+            <h3>Donor Transparency</h3>
             <p>
-              Bringing donors, volunteers, businesses,
-              and neighbors together to create a
-              stronger local support network.
+              Donors can receive updates on how
+              funds were used and the impact
+              created, without publicly identifying
+              those receiving assistance.
             </p>
           </article>
 
         </div>
-
-        <p class="program-note">
-          Assistance is subject to available funding,
-          eligibility criteria, and review. Listing a
-          program does not guarantee financial assistance.
-        </p>
       </div>
     </section>
 
-    <!-- FUNDRAISING -->
-    <section class="section" id="impact">
-      <div class="container giving-grid">
+    <!-- PROCESS -->
+    <section class="section process" id="process">
+      <div class="container">
 
-        <div class="goal-card">
-          <span class="eyebrow" style="color:#9fdda3">
-            Our Annual Mission
-          </span>
-
-          <h3>
-            One community. One shared goal.
-          </h3>
-
-          <div class="goal-amount">$10,000</div>
-
-          <p>
-            Our annual fundraising target to help
-            individuals and families facing hardship.
-          </p>
-
-          <div class="goal-line">
-            <span></span>
-          </div>
-
-          <div class="goal-caption">
-            Annual fundraising target.
-            Donation progress will be published
-            when verified totals are available.
-          </div>
-        </div>
-
-        <div class="giving-copy">
-          <span class="eyebrow">The Power of Giving</span>
+        <div class="center">
+          <span class="eyebrow">How C.A.R.E. Works</span>
 
           <h2 class="section-title">
-            Your generosity can
-            change someone's day.
+            A thoughtful approach to giving.
           </h2>
 
-          <p>
-            A grocery bill. A utility payment.
-            Essential supplies for a family.
-            Sometimes the difference between
-            overwhelming stress and renewed hope
-            is a little help at just the right time.
+          <p class="intro">
+            Every situation is different.
+            Our process is designed to help us
+            understand real needs and provide
+            meaningful assistance responsibly.
           </p>
-
-          <p>
-            Our goal is to raise $10,000 annually
-            to support individuals and families
-            in need through thoughtful,
-            needs-based charitable assistance.
-          </p>
-
-          <p>
-            Every contribution helps us work
-            toward that goal, and every supporter
-            becomes part of something bigger.
-          </p>
-
-          <div class="giving-actions">
-            <a href="#donate" class="btn btn-green">
-              ♥ Support Our Mission
-            </a>
-          </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- DONATE -->
-    <section class="section steps" id="donate">
-      <div class="container center">
-        <span class="eyebrow">Give Hope</span>
-
-        <h2 class="section-title">
-          Be the reason someone smiles today.
-        </h2>
-
-        <p class="section-intro">
-          Whether you make a one-time gift or choose
-          to support C.A.R.E. regularly, your kindness
-          helps build a stronger community.
-        </p>
-
-        <div class="steps-grid">
+        <div class="steps">
 
           <div class="step">
             <div class="step-number">01</div>
-            <h3>Choose to Give</h3>
+            <h3>Community Referral</h3>
             <p>
-              Make a contribution in an amount
-              that's meaningful to you.
+              A trusted individual, church,
+              or community organization refers
+              someone experiencing hardship.
             </p>
           </div>
 
           <div class="step">
             <div class="step-number">02</div>
-            <h3>We Put Care Into Action</h3>
+            <h3>Personal Conversation</h3>
             <p>
-              Donations support our charitable
-              mission and qualifying community
-              assistance efforts.
+              We privately connect with the
+              individual or family to understand
+              their circumstances and financial needs.
             </p>
           </div>
 
           <div class="step">
             <div class="step-number">03</div>
-            <h3>Communities Grow Stronger</h3>
+            <h3>Review & Assistance</h3>
             <p>
-              Together, we help create moments
-              of relief, dignity, and hope.
+              The request is evaluated through
+              our review process. Approved assistance
+              is provided based on documented need
+              and available resources.
             </p>
           </div>
 
         </div>
 
-        <div class="giving-actions"
-             style="justify-content:center;margin-top:35px">
+      </div>
+    </section>
+
+    <!-- DONATIONS -->
+    <section class="section donation" id="donate">
+      <div class="container center">
+
+        <span class="eyebrow">Make a Difference</span>
+
+        <h2 class="section-title">
+          Your generosity.
+          Someone else's relief.
+        </h2>
+
+        <p class="intro">
+          Join us in helping local individuals
+          and families during one of the most
+          financially challenging times of the year.
+          Every contribution brings us closer
+          to our $10,000 goal.
+        </p>
+
+        <div class="donation-actions">
           <button
-            type="button"
             class="btn btn-green"
             id="oneTimeDonate"
+            type="button"
           >
             ♥ Make a Donation
           </button>
 
           <button
-            type="button"
-            class="btn btn-navy"
+            class="btn btn-white"
             id="monthlyDonate"
+            type="button"
           >
             Become a Monthly Supporter
           </button>
         </div>
 
-        <p style="margin-top:22px;font-size:13px;color:var(--muted)">
-          Donations are processed through Stripe
-          when a live donation link is configured.
-          Please confirm C.A.R.E.'s federal
-          tax-exempt recognition before claiming
-          that donations are tax-deductible.
+        <p class="donation-note">
+          C.A.R.E. is a federally recognized
+          501(c)(3) nonprofit organization.
+          Donations are generally tax-deductible
+          to the extent permitted by law.
+          Payments are securely processed
+          through Stripe when donation links
+          are configured.
         </p>
+
       </div>
     </section>
 
-    <!-- GET HELP -->
-    <section class="section" id="help">
+    <!-- REFERRALS -->
+    <section class="section" id="referrals">
       <div class="container">
 
-        <div class="help-banner">
+        <div class="referral-box">
           <div>
-            <span class="eyebrow" style="color:#a5e5a7">
-              We're Here for Our Community
+            <span class="eyebrow">
+              Know Someone Who Needs Help?
             </span>
 
             <h2>
-              Going through a difficult time?
+              Sometimes the people who
+              need help most never ask.
             </h2>
 
             <p>
-              Asking for help takes courage.
-              If you or someone you know is
-              facing financial hardship, contact
-              C.A.R.E. to ask about our assistance
-              process and available resources.
+              C.A.R.E. accepts confidential referrals
+              from community members, churches,
+              and local organizations who know
+              individuals or families facing
+              genuine financial hardship.
+            </p>
+
+            <p>
+              Referrals are not public applications.
+              Each situation is reviewed privately,
+              and assistance is never guaranteed.
+              Please do not share sensitive personal
+              or financial details through ordinary email.
             </p>
           </div>
 
-          <a
-            href="mailto:travismcminn1991@gmail.com?subject=CARE%20Assistance%20Inquiry"
-            class="btn btn-white"
+          <button
+            class="btn btn-green"
+            id="referralBtn"
+            type="button"
+            style="flex-shrink:0"
           >
-            Ask About Assistance →
-          </a>
+            Submit a Referral →
+          </button>
         </div>
-
-        <p class="program-note">
-          C.A.R.E. is not an emergency response service.
-          Assistance requests are reviewed based on
-          available resources and established criteria.
-          For an immediate emergency, contact
-          the appropriate emergency service.
-        </p>
 
       </div>
     </section>
@@ -1128,42 +1046,40 @@
       <div class="container contact-grid">
 
         <div>
-          <span class="eyebrow">Connect With Us</span>
+          <span class="eyebrow">Get in Touch</span>
 
           <h2 class="section-title">
-            Let's make a difference together.
+            Stronger people.
+            Stronger communities.
           </h2>
 
-          <p class="section-intro">
-            Have a question about donating,
-            volunteering, partnering with C.A.R.E.,
-            or requesting assistance?
-            We'd love to hear from you.
-          </p>
-
-          <p style="margin-top:25px;color:var(--muted)">
-            Based in Fredericktown, Missouri,
-            C.A.R.E. believes meaningful change
-            starts with neighbors looking out
-            for one another.
+          <p class="intro">
+            Whether you're interested in donating,
+            supporting our mission, partnering
+            with C.A.R.E., or learning more about
+            our referral process, we'd love
+            to connect.
           </p>
 
           <a
-            href="mailto:travismcminn1991@gmail.com?subject=CARE%20General%20Inquiry"
+            href="mailto:travismcminn1991@gmail.com?subject=CARE%20Inquiry"
             class="btn btn-green"
-            style="margin-top:12px"
+            style="margin-top:15px"
           >
-            Send Us a Message
+            Contact C.A.R.E.
           </a>
         </div>
 
         <div class="contact-card">
+
           <div class="contact-item">
             <strong>Organization</strong>
-            <span>
-              Community Assistance & Relief Effort
-              (C.A.R.E.)
-            </span>
+            Community Assistance & Relief Effort
+          </div>
+
+          <div class="contact-item">
+            <strong>Federal Status</strong>
+            501(c)(3) Tax-Exempt Nonprofit
           </div>
 
           <div class="contact-item">
@@ -1191,6 +1107,7 @@
               carehelps.org
             </a>
           </div>
+
         </div>
 
       </div>
@@ -1205,12 +1122,14 @@
       <div class="footer-grid">
 
         <div>
-          <div class="footer-brand">C.A.R.E. 💚</div>
+          <h3>C.A.R.E. 💚</h3>
           <p>
             Community Assistance & Relief Effort
-            is dedicated to helping individuals
-            and families through compassion,
-            practical assistance, and community support.
+            is a Missouri-based 501(c)(3)
+            nonprofit organization dedicated
+            to providing confidential financial
+            assistance to individuals and families
+            facing hardship.
           </p>
           <p>
             Stronger People. Stronger Communities.
@@ -1221,18 +1140,19 @@
           <h4>Explore</h4>
           <div class="footer-links">
             <a href="#about">Our Mission</a>
-            <a href="#programs">What We Do</a>
-            <a href="#impact">Our Annual Goal</a>
-            <a href="#help">Get Help</a>
-            <a href="#donate">Donate</a>
+            <a href="#campaign">2026 Campaign</a>
+            <a href="#approach">Our Principles</a>
+            <a href="#process">Our Process</a>
+            <a href="#referrals">Refer Someone</a>
           </div>
         </div>
 
         <div>
-          <h4>Get in Touch</h4>
+          <h4>Connect</h4>
           <div class="footer-links">
+            <a href="#donate">Donate</a>
             <a href="mailto:travismcminn1991@gmail.com">
-              Email C.A.R.E.
+              Email Us
             </a>
             <a href="tel:+15735769305">
               (573) 576-9305
@@ -1252,7 +1172,8 @@
         </span>
 
         <span>
-          Made with care for our community. 💚
+          A 501(c)(3) nonprofit organization.
+          Made with care. 💚
         </span>
       </div>
 
@@ -1261,26 +1182,28 @@
 
   <script>
     /*
-      WEBSITE SETTINGS
+      CARE WEBSITE CONFIGURATION
 
-      Replace the empty strings below with
-      your LIVE Stripe Payment Link URLs.
+      Paste LIVE Stripe Payment Link URLs below.
 
       Example:
       oneTimeStripeLink:
-        'https://buy.stripe.com/your-real-link'
+        'https://buy.stripe.com/YOUR-LINK'
 
-      Do not use Stripe secret API keys here.
-      Only use public hosted Payment Link URLs.
+      referralFormUrl:
+        A secure referral form URL.
+
+      Never put Stripe secret keys in HTML.
     */
 
     const SITE_CONFIG = {
       oneTimeStripeLink: '',
       monthlyStripeLink: '',
+      referralFormUrl: '',
       contactEmail: 'travismcminn1991@gmail.com'
     };
 
-    // Current year
+    // Footer year
     document.getElementById('year').textContent =
       new Date().getFullYear();
 
@@ -1289,29 +1212,34 @@
     const navLinks = document.getElementById('navLinks');
 
     menuBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      const open = navLinks.classList.toggle('open');
+
+      menuBtn.setAttribute(
+        'aria-expanded',
+        String(open)
+      );
+
       menuBtn.setAttribute(
         'aria-label',
-        isOpen ? 'Close navigation' : 'Open navigation'
+        open ? 'Close navigation' : 'Open navigation'
       );
-      menuBtn.textContent = isOpen ? '×' : '☰';
+
+      menuBtn.textContent = open ? '×' : '☰';
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.setAttribute('aria-label', 'Open navigation');
         menuBtn.textContent = '☰';
       });
     });
 
-    // Donation actions
-    function openDonation(link, donationType) {
+    // Donation links
+    function openDonation(link, type) {
       if (
         link &&
-        /^https:\/\/buy\.stripe\.com\//.test(link)
+        /^https:\/\/buy\.stripe\.com\//i.test(link)
       ) {
         window.open(
           link,
@@ -1322,21 +1250,12 @@
       }
 
       const subject = encodeURIComponent(
-        donationType + ' Donation Inquiry - CARE'
-      );
-
-      const body = encodeURIComponent(
-        'Hello C.A.R.E.,\n\n' +
-        'I would like information about making a ' +
-        donationType.toLowerCase() +
-        ' donation to support your mission.\n\n' +
-        'Thank you!'
+        type + ' Donation Inquiry - CARE'
       );
 
       window.location.href =
         'mailto:' + SITE_CONFIG.contactEmail +
-        '?subject=' + subject +
-        '&body=' + body;
+        '?subject=' + subject;
     }
 
     document.getElementById('oneTimeDonate')
@@ -1353,6 +1272,40 @@
           SITE_CONFIG.monthlyStripeLink,
           'Monthly'
         );
+      });
+
+    // Confidential referrals
+    document.getElementById('referralBtn')
+      .addEventListener('click', () => {
+        const url = SITE_CONFIG.referralFormUrl;
+
+        if (
+          url &&
+          /^https:\/\//i.test(url)
+        ) {
+          window.open(
+            url,
+            '_blank',
+            'noopener,noreferrer'
+          );
+          return;
+        }
+
+        const subject = encodeURIComponent(
+          'Confidential Referral Process Inquiry - CARE'
+        );
+
+        const body = encodeURIComponent(
+          'Hello C.A.R.E.,\n\n' +
+          'I would like information about your ' +
+          'confidential referral process.\n\n' +
+          'Please let me know how to proceed.'
+        );
+
+        window.location.href =
+          'mailto:' + SITE_CONFIG.contactEmail +
+          '?subject=' + subject +
+          '&body=' + body;
       });
   </script>
 
