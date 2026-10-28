@@ -979,7 +979,7 @@
             id="monthlyDonate"
             type="button"
           >
-            Become a Monthly Supporter
+            Ask About Monthly Giving
           </button>
         </div>
 
@@ -989,8 +989,7 @@
           Donations are generally tax-deductible
           to the extent permitted by law.
           Payments are securely processed
-          through Stripe when donation links
-          are configured.
+          through Stripe for online donations.
         </p>
 
       </div>
@@ -1184,11 +1183,11 @@
     /*
       CARE WEBSITE CONFIGURATION
 
-      Paste LIVE Stripe Payment Link URLs below.
+      Use LIVE Stripe Payment Link URLs below.
 
       Example:
       oneTimeStripeLink:
-        'https://buy.stripe.com/YOUR-LINK'
+        'https://donate.stripe.com/YOUR-LINK'
 
       referralFormUrl:
         A secure referral form URL.
@@ -1197,7 +1196,7 @@
     */
 
     const SITE_CONFIG = {
-      oneTimeStripeLink: '',
+      oneTimeStripeLink: 'https://donate.stripe.com/bJe4gygIs0u61FQ5HZ7EQ01',
       monthlyStripeLink: '',
       referralFormUrl: '',
       contactEmail: 'travismcminn1991@gmail.com'
@@ -1239,7 +1238,7 @@
     function openDonation(link, type) {
       if (
         link &&
-        /^https:\/\/buy\.stripe\.com\//i.test(link)
+        /^https:\/\/(?:buy|donate)\.stripe\.com\//i.test(link)
       ) {
         window.open(
           link,
