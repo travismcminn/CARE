@@ -436,6 +436,19 @@
       max-width: 650px;
     }
 
+
+    /* SMS community updates */
+    .updates { background: linear-gradient(145deg,#f0f7f1,#ffffff); }
+    .updates-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap:55px; align-items:center; }
+    .updates-copy p { color:var(--muted); }
+    .updates-phone { display:inline-block; font-weight:800; color:var(--navy); }
+    .updates-frame-wrap { background:#fff; border:1px solid var(--border); border-radius:22px; box-shadow:0 14px 45px rgba(8,43,77,.08); padding:16px; overflow:hidden; }
+    .updates-frame { display:block; width:100%; height:660px; border:0; background:white; }
+    .updates-fallback { margin:12px 0 0; text-align:center; font-size:12px; color:var(--muted); }
+    .updates-fallback a { color:var(--green); font-weight:800; text-decoration:underline; }
+    @media(max-width:900px) { .updates-grid { grid-template-columns:1fr; gap:28px; } }
+    @media(max-width:620px) { .updates-frame-wrap { padding:6px; border-radius:15px; } .updates-frame { height:760px; } }
+
     /* Contact */
     .contact { background: var(--cream); }
     .contact-grid {
@@ -596,6 +609,7 @@
         <a href="#campaign">2026 Campaign</a>
         <a href="#approach">Our Approach</a>
         <a href="#referrals">Referrals</a>
+        <a href="#updates">Text Updates</a>
         <a href="#contact">Contact</a>
         <a href="#donate" class="btn btn-green">♥ Donate</a>
       </div>
@@ -1048,6 +1062,27 @@
       </div>
     </section>
 
+    <!-- COMMUNITY SMS UPDATES -->
+    <section class="section updates" id="updates" aria-labelledby="updates-heading">
+      <div class="container updates-grid">
+        <div class="updates-copy">
+          <span class="eyebrow">Stay Connected</span>
+          <h2 class="section-title" id="updates-heading">See the difference our community is making.</h2>
+          <p>Get occasional text updates about how C.A.R.E. is helping individuals and families in Fredericktown and surrounding communities, while protecting their privacy.</p>
+          <p>Prefer texting? Send <strong>CARE</strong> to <a class="updates-phone" href="sms:+15732736036?body=CARE">(573) 273-6036</a> to join.</p>
+          <p style="font-size:13px">Community updates only. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance.</p>
+        </div>
+        <div class="updates-frame-wrap">
+          <iframe class="updates-frame"
+            title="Sign up for C.A.R.E. community text updates"
+            src="https://app2.simpletexting.com/join/joinWebForm?webFormId=6ae263582763c85a7915f327&amp;c=USA"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <p class="updates-fallback">Form not displaying? <a href="https://app2.simpletexting.com/join/joinWebForm?webFormId=6ae263582763c85a7915f327&amp;c=USA" target="_blank" rel="noopener noreferrer">Open the secure signup form</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section class="section contact" id="contact">
       <div class="container contact-grid">
@@ -1151,6 +1186,7 @@
             <a href="#approach">Our Principles</a>
             <a href="#process">Our Process</a>
             <a href="#referrals">Refer Someone</a>
+            <a href="#updates">Text Updates</a>
             <a href="/privacy.html">Privacy Policy</a>
             <a href="/sms-terms.html">SMS Terms &amp; Conditions</a>
           </div>
